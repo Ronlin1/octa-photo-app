@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'photo:list' %}">Octa Photo Sharing App</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse flex-row-reverse"
+      id="navbarTogglerDemo02"
+    >
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Hello {{user.username}}</a>
+        </li>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp; 
+        &nbsp;
+        &nbsp;
+
+        <li class="nav-item">
+          <a class="btn btn-sm btn-link" href="{% url 'photo:create' %}">Add A New HD Tech Photo</a>
+        </li>
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a href="https://www.resizepixel.com/" class="btn btn-sm btn-warning"
+          target="_blank">Resize Pixels</a>
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a href="https://www.buymeacoffee.com/RonnieAtuhaire" class="btn btn-sm btn-primary"
+          target="_blank">Still want to Buy Me A Coffee  </a>
+
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a href="http://blog.octachart.com/" class="btn btn-sm btn-light"
+          target="_blank">Visit My Blog </a>
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a href="{% url 'user:logout' %}" class="btn btn-sm btn-danger"
+            > Sign Out</a
+          >
+        {% else %}
+        <li class="nav-item">
+          <a href="https://www.buymeacoffee.com/RonnieAtuhaire" class="btn btn-sm btn-primary"
+          target="_blank">Buy Me A Coffee  </a>
+
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a href="http://blog.octachart.com/" class="btn btn-sm btn-light"
+          target="_blank">Check Out Ronnie's Blog </a>
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a href="http://octachart.com/" class="btn btn-sm btn-warning"
+          target="_blank">Check Out Octachart Instead  </a>
+            &nbsp;
+            &nbsp;
+            <li class="nav-item">
+              <a href="https://github.com/Ronlin1/octa-photo-app" class="btn btn-sm btn-success"
+          target="_blank">Contribute </a> 
+            &nbsp;
+            &nbsp;       
+        <li class="nav-item">
+          <a href="{% url 'user:login' %}" class="btn btn-sm btn-danger"
+            >Sign In</a
+          >
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
